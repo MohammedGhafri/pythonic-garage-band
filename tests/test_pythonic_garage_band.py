@@ -1,5 +1,5 @@
 from pythonic_garage_band import __version__
-from pythonic_garage_band.pythonic_garage_band import  Band,Guitarist,Bassist,Drummer
+from pythonic_garage_band.pythonic_garage_band import  Musician,Band,Guitarist,Bassist,Drummer
 import pytest
 
 def test_version():
@@ -18,7 +18,7 @@ def prep_data():
 def test_one(prep_data):
     ahmad=Guitarist("ahmad","Guitarist")
     expected=f"This in the main Band {prep_data['ahmad'].name} will Play a solo"
-    actual=Band.play_solos(prep_data['ahmad'])
+    actual=Musician.play_solos(prep_data['ahmad'])
     assert expected==actual
 
 def test_two(prep_data):
